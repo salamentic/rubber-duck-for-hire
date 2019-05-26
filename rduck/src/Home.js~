@@ -4,13 +4,31 @@ import Button from '@material-ui/core/Button';
 
 import './Home.css';
 import Chatrooms from "./Chatrooms";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import {
+  Route,
+  Switch,
+  HashRouter
+} from "react-router-dom";
  
 class Home extends Component {
   render() {
     return (
-        <Button variant = 'contained' color = 'primary' component={Link} to="/Chatrooms" >
+        <fragment>
+        <Route render={({location}) => (
+        <TransitionGroup>
+        <CSSTransition 
+          key={location.key}
+          timeout = {450}
+          classNames = "fade">
+        <p className = "startText"> Got some ideas to bounce? Join us. </p>
+        <Button size = 'large' fullWidth = 'true' variant = 'contained' color = 'secondary' component={Link} to="/Chatrooms" >
         Rooms
         </Button>
+        </ CSSTransition>
+        </TransitionGroup>
+        )} />
+        </fragment>
     );
   }
 }

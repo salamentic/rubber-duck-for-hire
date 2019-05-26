@@ -1,7 +1,12 @@
-body, html {
+body {
     background : "#333";
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+body .startText {
+    color : white;
+    text-align : middle;
+    font-size : 30px;
 }
