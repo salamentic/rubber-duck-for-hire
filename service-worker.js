@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rubber-duck-for-hire/precache-manifest.a3febe81eee2911158959687a4662f53.js"
+  "/rubber-duck-for-hire/precache-manifest.07be245ca97240f5ed0f726c1de2c05b.js"
 );
 
 self.addEventListener('message', (event) => {

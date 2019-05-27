@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/rubber-duck-for-hire/static/css/main.a48658ee.chunk.css",
-    "main.js": "/rubber-duck-for-hire/static/js/main.e9bc85ec.chunk.js",
-    "main.js.map": "/rubber-duck-for-hire/static/js/main.e9bc85ec.chunk.js.map",
+    "main.css": "/rubber-duck-for-hire/static/css/main.b9de0b46.chunk.css",
+    "main.js": "/rubber-duck-for-hire/static/js/main.3c4ace90.chunk.js",
+    "main.js.map": "/rubber-duck-for-hire/static/js/main.3c4ace90.chunk.js.map",
     "runtime~main.js": "/rubber-duck-for-hire/static/js/runtime~main.448b7adf.js",
     "runtime~main.js.map": "/rubber-duck-for-hire/static/js/runtime~main.448b7adf.js.map",
     "static/css/2.266e55a5.chunk.css": "/rubber-duck-for-hire/static/css/2.266e55a5.chunk.css",
     "static/js/2.098b66e1.chunk.js": "/rubber-duck-for-hire/static/js/2.098b66e1.chunk.js",
     "static/js/2.098b66e1.chunk.js.map": "/rubber-duck-for-hire/static/js/2.098b66e1.chunk.js.map",
     "index.html": "/rubber-duck-for-hire/index.html",
-    "precache-manifest.a3febe81eee2911158959687a4662f53.js": "/rubber-duck-for-hire/precache-manifest.a3febe81eee2911158959687a4662f53.js",
+    "precache-manifest.07be245ca97240f5ed0f726c1de2c05b.js": "/rubber-duck-for-hire/precache-manifest.07be245ca97240f5ed0f726c1de2c05b.js",
     "service-worker.js": "/rubber-duck-for-hire/service-worker.js",
     "static/css/2.266e55a5.chunk.css.map": "/rubber-duck-for-hire/static/css/2.266e55a5.chunk.css.map",
-    "static/css/main.a48658ee.chunk.css.map": "/rubber-duck-for-hire/static/css/main.a48658ee.chunk.css.map"
+    "static/css/main.b9de0b46.chunk.css.map": "/rubber-duck-for-hire/static/css/main.b9de0b46.chunk.css.map"
   }
 }
