@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import "./Chatrooms.css"
+import App from "./App.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal'
  
@@ -78,6 +79,7 @@ class Chatrooms extends React.Component {
     }
 
     render() { return (
+        <div>
         <div className = "parent">
         <div className = "ButtonGroup">
         <ButtonSlide text1="Room 1" text2="GO !" func = {() => this.handleShow(0)}/>
@@ -95,14 +97,12 @@ class Chatrooms extends React.Component {
         <ButtonSlide text1="Room 13" text2="GO !" func = {() => this.handleShow(12)}/>
         <ButtonSlide text1="Room 14" text2="GO !" func = {() => this.handleShow(13)}/>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header>Chatroom # {this.state.roomid} </Modal.Header>
-          <Modal.Body> I have messages in me </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
+        </div>
+        <Modal  dialogClassName="modal-90w" size = "lg" scrollable show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header >Chatroom # {this.state.roomid} </Modal.Header>
+          <Modal.Body scrollable>
+          <App />
+          </Modal.Body>
         </Modal>)
         </div>
     );

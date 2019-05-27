@@ -59,7 +59,7 @@ class App extends Component
             <Messages
                 messages={this.state.messages}
                 currentMember={this.state.member}/>
-            <Input onSendMessage = {this.onSendMessage}/>
+            <Input onSendMessage = {this.onSendMessage} />
         </div>
         );
     }

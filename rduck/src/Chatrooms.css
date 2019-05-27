@@ -2,6 +2,10 @@
   display: block; /* Make the buttons appear below each other */
 }
 
+html
+{
+    overflow:hidden;
+}
 .parent{
     width : 15%;
     margin: 0 auto;
