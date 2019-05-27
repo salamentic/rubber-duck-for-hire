@@ -8,12 +8,12 @@ import Chatrooms from "./Chatrooms";
 class Home extends Component {
   render() {
     return (
-        <fragment>
+        <div className="centerer">
         <p className = "startText"> Got some ideas to bounce? Join us. </p>
         <Button size = 'large' fullWidth = 'true' variant = 'contained' color = 'secondary' component={Link} to="/Chatrooms" >
         Rooms
         </Button>
-        </fragment>
+        </div>
     );
   }
 }
