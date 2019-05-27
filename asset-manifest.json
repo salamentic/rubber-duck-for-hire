@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.a48658ee.chunk.css",
-    "main.js": "/static/js/main.e9bc85ec.chunk.js",
-    "main.js.map": "/static/js/main.e9bc85ec.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.266e55a5.chunk.css": "/static/css/2.266e55a5.chunk.css",
-    "static/js/2.098b66e1.chunk.js": "/static/js/2.098b66e1.chunk.js",
-    "static/js/2.098b66e1.chunk.js.map": "/static/js/2.098b66e1.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.b3975267594c0acac17fc5691cae0364.js": "/precache-manifest.b3975267594c0acac17fc5691cae0364.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.266e55a5.chunk.css.map": "/static/css/2.266e55a5.chunk.css.map",
-    "static/css/main.a48658ee.chunk.css.map": "/static/css/main.a48658ee.chunk.css.map"
+    "main.css": "/rubber-duck-for-hire/static/css/main.a48658ee.chunk.css",
+    "main.js": "/rubber-duck-for-hire/static/js/main.e9bc85ec.chunk.js",
+    "main.js.map": "/rubber-duck-for-hire/static/js/main.e9bc85ec.chunk.js.map",
+    "runtime~main.js": "/rubber-duck-for-hire/static/js/runtime~main.448b7adf.js",
+    "runtime~main.js.map": "/rubber-duck-for-hire/static/js/runtime~main.448b7adf.js.map",
+    "static/css/2.266e55a5.chunk.css": "/rubber-duck-for-hire/static/css/2.266e55a5.chunk.css",
+    "static/js/2.098b66e1.chunk.js": "/rubber-duck-for-hire/static/js/2.098b66e1.chunk.js",
+    "static/js/2.098b66e1.chunk.js.map": "/rubber-duck-for-hire/static/js/2.098b66e1.chunk.js.map",
+    "index.html": "/rubber-duck-for-hire/index.html",
+    "precache-manifest.a3febe81eee2911158959687a4662f53.js": "/rubber-duck-for-hire/precache-manifest.a3febe81eee2911158959687a4662f53.js",
+    "service-worker.js": "/rubber-duck-for-hire/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/rubber-duck-for-hire/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.a48658ee.chunk.css.map": "/rubber-duck-for-hire/static/css/main.a48658ee.chunk.css.map"
   }
 }
