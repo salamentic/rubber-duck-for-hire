@@ -2,21 +2,30 @@
   display: block; /* Make the buttons appear below each other */
 }
 
-.parent{
-    width : 15%;
-    margin: 0 auto;
+html
+{
     overflow:hidden;
 }
+.parent{
+    display:flex;
+    padding-top : 2%;
+    padding-right : 5%;
+    padding-left : 5%;
+    width : 55%;
+    margin: 0 auto;
+}
 .ButtonGroup {
-  height: 100vh;
-  width:200px;
+  background-color: rgba(0,0,0,0.2);
+      border-radius: 25px;
+  height: 80vh;
+  width:400px;
   overflow-y:scroll;
 }
 
 .button {
   background: #3D4C53;
   margin : 20px auto;
-  width : 100%;
+  width : 50%;
   height : 50px;
   overflow: hidden;
   text-align : center;

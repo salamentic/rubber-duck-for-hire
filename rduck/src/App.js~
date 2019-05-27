@@ -51,15 +51,21 @@ class App extends Component
      room: "observable-room",
      message
     });
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
    }
     
     render() {
         return (
+            <div>
         <div className = "App">
             <Messages
                 messages={this.state.messages}
                 currentMember={this.state.member}/>
-            <Input onSendMessage = {this.onSendMessage} />
+            <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.messagesEnd = el; }}>
+        </div>
+        </div>
+        <Input onSendMessage = {this.onSendMessage}/>
         </div>
         );
     }
