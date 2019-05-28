@@ -5,6 +5,7 @@
   "homepage": "https://salamentic.github.io/rubber-duck-for-hire/",
   "dependencies": {
     "@material-ui/core": "^4.0.0",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.1",

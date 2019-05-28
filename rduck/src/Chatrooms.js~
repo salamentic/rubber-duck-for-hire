@@ -9,6 +9,7 @@ import "./Chatrooms.css"
 import App from "./App.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal'
+import axios from 'axios';
  
 
 
@@ -40,25 +41,25 @@ class Chatrooms extends React.Component {
 
     this.state = {
         show : false,
-        rooms : [false, false, false, false,
-        false, false, false, false,
-        false, false, false, false,
-        false, false],
         roomid : -1,
+        rooms : null,
 
     };
     }
 
     handleClose() {
-        const temp = this.state.rooms.slice();
-        temp[0] = false;
-        this.setState({show : false, roomid : -1, rooms : temp});
+        this.setState({show : false, roomid : -1});
+    }
+
+    async componentDidMount() {
+        const rooms = (await axios.get('http://localhost:8082/')).data;
+        this.setState( {
+            rooms,
+        });
     }
 
     handleShow(i) {
-        const temp = this.state.rooms.slice();
-        temp[i] = true;
-        this.setState({show : true, rooms : temp, roomid : i+1});
+        this.setState({show : true, roomid : i+1});
     }
 
 
@@ -82,23 +83,15 @@ class Chatrooms extends React.Component {
         <div>
         <div className = "parent">
         <div className = "ButtonGroup">
-        <ButtonSlide text1="Room 1" text2="GO !" func = {() => this.handleShow(0)}/>
-        <ButtonSlide text1="Room 2" text2="GO !" func = {() => this.handleShow(1)}/>
-        <ButtonSlide text1="Room 3" text2="GO !" func = {() => this.handleShow(2)}/>
-        <ButtonSlide text1="Room 4" text2="GO !" func = {() => this.handleShow(3)}/>
-        <ButtonSlide text1="Room 5" text2="GO !" func = {() => this.handleShow(4)}/>
-        <ButtonSlide text1="Room 6" text2="GO !" func = {() => this.handleShow(5)}/>
-        <ButtonSlide text1="Room 7" text2="GO !" func = {() => this.handleShow(6)}/>
-        <ButtonSlide text1="Room 8" text2="GO !" func = {() => this.handleShow(7)}/>
-        <ButtonSlide text1="Room 9" text2="GO !" func = {() => this.handleShow(8)}/>
-        <ButtonSlide text1="Room 10" text2="GO !" func = {() => this.handleShow(9)}/>
-        <ButtonSlide text1="Room 11" text2="GO !" func = {() => this.handleShow(10)}/>
-        <ButtonSlide text1="Room 12" text2="GO !" func = {() => this.handleShow(11)}/>
-        <ButtonSlide text1="Room 13" text2="GO !" func = {() => this.handleShow(12)}/>
-        <ButtonSlide text1="Room 14" text2="GO !" func = {() => this.handleShow(13)}/>
+        {this.state.rooms === null && <p> Loading rooms... </p>}
+        {
+            this.state.rooms && this.state.rooms.map(room => (
+            <ButtonSlide text1="Room 1" text2="GO !" func = {() => this.handleShow(room.id)}/>
+            ))
+        }
         </div>
         </div>
-        <Modal  dialogClassName="modal-90w" size = "lg" show={this.state.show} onHide={this.handleClose}>
+        <Modal  dialogClassName="modal-90w" size = "lg" scrollable show={this.state.show} onHide={this.handleClose}>
           <Modal.Header >Chatroom # {this.state.roomid} </Modal.Header>
           <Modal.Body scrollable>
           <App />
