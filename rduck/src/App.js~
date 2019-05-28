@@ -51,8 +51,17 @@ class App extends Component
      room: "observable-room",
      message
     });
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
    }
+    scrollEnd()
+    {
+                if(this.messagesEnd)
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" })
+    }
+
+    componentDidUpdate() {
+        this.scrollEnd();
+    }
+
     
     render() {
         return (
@@ -61,7 +70,7 @@ class App extends Component
             <Messages
                 messages={this.state.messages}
                 currentMember={this.state.member}/>
-            <div style={{ float:"left", clear: "both" }}
+            <div style={{height:"1px", float:"left", clear: "both" }}
              ref={(el) => { this.messagesEnd = el; }}>
         </div>
         </div>
