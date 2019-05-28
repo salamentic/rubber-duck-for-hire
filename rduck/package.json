@@ -17,6 +17,7 @@
     "react-scripts": "3.0.1",
     "react-transition-group": "^4.0.1",
     "reactjs-popup": "^1.4.1",
+    "socket.io-client": "^2.2.0",
     "stream-chat-react": "^0.6.4",
     "typescript": "^3.4.5"
   },

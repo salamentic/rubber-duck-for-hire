@@ -3,6 +3,8 @@ import Input from "./Input.js"
 import "./App.css"
 import {Component} from "react";
 import React from "react";
+import openSocket from 'socket.io-client';
+import axios from 'axios';
 
 function randomName() {
   const adjectives = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
@@ -16,28 +18,9 @@ function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
+    const socket = openSocket('http://localhost:8082');
 class App extends Component
 {
-   constructor() {
-    super();
-    this.drone = new window.Scaledrone("8l2XgMuYAYyEoXnG", {
-      data: this.state.member
-    });
-    this.drone.on('open', error => {
-      if (error) {
-        return console.error(error);
-      }
-      const member = {...this.state.member};
-      member.id = this.drone.clientId;
-      this.setState({member});
-    });
-    const room = this.drone.subscribe("observable-room");
-    room.on('data', (data, member) => {
-    const messages = this.state.messages;
-    messages.push({member, text: data});
-    this.setState({messages});
-    });
-    }
     state = {
         messages : [],
         member: {
@@ -45,13 +28,23 @@ class App extends Component
             color: randomColor()
         }
     }
+   constructor(props) {
+    super(props);
+    socket.on('sent', (data) => {
+        const messages = this.state.messages;
+        messages.push({username: data.username, color : randomColor(), text:data.message });
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        this.setState({messages});
+    });
+         socket.emit('message');
+    }
 
   onSendMessage = (message) => {
-    this.drone.publish({
-     room: "observable-room",
-     message
-    });
-   }
+      console.log(this.props.roomid);
+      axios.post('http://localhost:8082/' + (this.props.roomid-1),{username:this.state.member.username,message: message,});
+      socket.emit('message');
+    }
+
     scrollEnd()
     {
                 if(this.messagesEnd)

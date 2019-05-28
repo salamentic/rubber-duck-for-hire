@@ -83,10 +83,10 @@ class Chatrooms extends React.Component {
         <div>
         <div className = "parent">
         <div className = "ButtonGroup">
-        {this.state.rooms === null && <p> Loading rooms... </p>}
+        {this.state.rooms === null && <div class = "button"> Loading rooms... </div>}
         {
             this.state.rooms && this.state.rooms.map(room => (
-            <ButtonSlide text1="Room 1" text2="GO !" func = {() => this.handleShow(room.id)}/>
+            <ButtonSlide text1= {room.name} text2="GO !" func = {() => this.handleShow(room.id)}/>
             ))
         }
         </div>
@@ -94,7 +94,7 @@ class Chatrooms extends React.Component {
         <Modal  dialogClassName="modal-90w" size = "lg" scrollable show={this.state.show} onHide={this.handleClose}>
           <Modal.Header >Chatroom # {this.state.roomid} </Modal.Header>
           <Modal.Body scrollable>
-          <App />
+          <App roomid= {this.state.roomid} />
           </Modal.Body>
         </Modal>)
         </div>
